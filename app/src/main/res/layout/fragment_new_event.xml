@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.NewEventFragment">
+
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:autoLink="web"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="start|top"
+        android:hint="@string/enter_text"
+        android:inputType="textMultiLine"
+        android:linksClickable="true"
+        tools:ignore="Autofill" />
+
+    <LinearLayout
+        android:id="@+id/link_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/edit"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/editLink"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/singleline_edit_text_height"
+            android:inputType="textPostalAddress"
+            android:layout_weight="2"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:id="@+id/okAdd"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/add_link"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            tools:ignore="RtlHardcoded,SmallSp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:layout_marginBottom="@dimen/common_spacing"
+        android:clickable="true"
+        android:contentDescription="@string/add_post"
+        app:layout_constraintTop_toBottomOf="@id/link_container"
+        app:layout_constraintBottom_toTopOf="@id/buttonPanel"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:focusable="true"
+        app:srcCompat="@drawable/ok_ic" />
+
+
+            <LinearLayout
+                android:id="@+id/buttonPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/ok"
+                app:layout_constraintStart_toStartOf="parent"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/menuAdd"
+                    style="@style/Widget.AppTheme.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:checkable="true"
+                    android:layout_margin="@dimen/small_spacing"
+                    app:icon="@drawable/baseline_add_circle_24" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/linkAdd"
+                    style="@style/Widget.AppTheme.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:checkable="true"
+                    android:layout_margin="@dimen/small_spacing"
+                    app:icon="@drawable/baseline_add_link_24" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/dateTime"
+                    style="@style/Widget.AppTheme.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:checkable="true"
+                    android:layout_margin="@dimen/small_spacing"
+                    app:icon="@drawable/baseline_calendar_month_24" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/type"
+                    style="@style/Widget.AppTheme.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:checkable="true"
+                    android:layout_margin="@dimen/small_spacing"
+                    app:icon="@drawable/online_ic" />
+
+            </LinearLayout>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/media_height"
+        android:checkable="true"
+        android:visibility="gone"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonPanel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingEnd="8dp"
+        tools:ignore="ContentDescription,RtlHardcoded,RtlSymmetry" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

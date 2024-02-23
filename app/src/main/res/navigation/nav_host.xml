@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+     app:startDestination="@id/postFragment">
+
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="ru.netology.mitune.ui.FeedPostFragment"
+        android:label="@string/posts" >
+        <action
+            android:id="@+id/action_postFragment_to_editPostFragment"
+            app:destination="@id/editPostFragment" />
+        <action
+            android:id="@+id/action_postFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_postFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_postFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_postFragment_to_newPostFragment"
+            app:destination="@id/newPostFragment" />
+        <action
+            android:id="@+id/action_postFragment_to_newEventFragment"
+            app:destination="@id/newEventFragment" />
+        <action
+            android:id="@+id/action_postFragment_to_feedEventFragment"
+            app:destination="@id/feedEventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editPostFragment"
+        android:name="ru.netology.mitune.ui.EditPostFragment"
+        android:label="@string/edit_post" />
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="ru.netology.mitune.ui.UserProfileFragment"
+        android:label="@string/my_profile" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_newJobFragment"
+            app:destination="@id/newJobFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_editJobFragment"
+            app:destination="@id/editJobFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="ru.netology.mitune.ui.LoginFragment"
+        android:label="@string/login" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="ru.netology.mitune.ui.RegistrationFragment"
+        android:label="@string/create_new_acc" >
+        <action
+            android:id="@+id/action_registrationFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newEventFragment"
+        android:name="ru.netology.mitune.ui.NewEventFragment"
+        android:label="@string/new_event" >
+    </fragment>
+    <fragment
+        android:id="@+id/newPostFragment"
+        android:name="ru.netology.mitune.ui.NewPostFragment"
+        android:label="@string/add_post" >
+    </fragment>
+    <fragment
+        android:id="@+id/newJobFragment"
+        android:name="ru.netology.mitune.ui.NewJobFragment"
+        android:label="@string/add_new_job"
+        tools:layout="@layout/fragment_new_job" />
+    <fragment
+        android:id="@+id/feedEventFragment"
+        android:name="ru.netology.mitune.ui.FeedEventFragment"
+        android:label="@string/events"
+        tools:layout="@layout/fragment_feed_events" >
+        <action
+            android:id="@+id/action_feedEventFragment_to_editEventFragment"
+            app:destination="@id/editEventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editEventFragment"
+        android:name="ru.netology.mitune.ui.EditEventFragment"
+        android:label="@string/edit_event" />
+    <fragment
+        android:id="@+id/editJobFragment"
+        android:name="ru.netology.mitune.ui.EditJobFragment"
+        android:label="@string/edit_job" />
+</navigation>
