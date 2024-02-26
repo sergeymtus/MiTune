@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import ru.netology.mitune.R
 import ru.netology.mitune.databinding.EditPostBinding
+import ru.netology.mitune.ui.EditEventFragment.Companion.EDITED_TEXT
 import ru.netology.mitune.util.StringArg
 import ru.netology.mitune.util.Utils
 import ru.netology.mitune.viewmodel.PostViewModel
@@ -33,7 +34,7 @@ class EditPostFragment : Fragment() {
         val binding = EditPostBinding.inflate(inflater, container, false)
 
         arguments?.edit?.let(binding.editText::setText)
-        binding.editText.setText(arguments?.getString("editedText"))
+        binding.editText.setText(arguments?.getString(EDITED_TEXT))
 
 
         binding.ok.setOnClickListener {

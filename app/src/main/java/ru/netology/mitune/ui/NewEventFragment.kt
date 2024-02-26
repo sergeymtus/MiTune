@@ -34,17 +34,18 @@ import ru.netology.mitune.viewmodel.NewEventViewModel
 import java.util.*
 
 
+
 @OptIn(ExperimentalCoroutinesApi::class)
 @AndroidEntryPoint
 class NewEventFragment : Fragment(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     private val newEventViewModel : NewEventViewModel by activityViewModels()
-    var dayEvent = 0
-    var monthEvent = 0
-    var yearEvent = 0
-    var hourEvent = 0
-    var minuteEvent = 0
+    private var dayEvent = 0
+    private var monthEvent = 0
+    private var yearEvent = 0
+    private var hourEvent = 0
+    private var minuteEvent = 0
 
-    var day = 0
+    private var day = 0
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -209,3 +210,4 @@ class NewEventFragment : Fragment(), DatePickerDialog.OnDateSetListener, TimePic
         newEventViewModel.addDateTime(dateTime)
     }
 }
+

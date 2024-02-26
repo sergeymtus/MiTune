@@ -77,8 +77,8 @@ fun List<PostEntity>.toDto(): List<Post> = map(PostEntity::toDto)
 fun List<Post>.toEntity(): List<PostEntity> = map(PostEntity.Companion::fromDto)
 
 data class AttachmentEmbedded(
-    var url: String,
-    var typeAttach: AttachmentType,
+    val url: String,
+    val typeAttach: AttachmentType,
 ) {
     fun toDto() = Attachment(url, typeAttach)
 

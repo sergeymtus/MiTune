@@ -29,14 +29,15 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class RegistrationFragment : Fragment() {
 
-    @Inject
-    lateinit var auth: AppAuth
-
-    @Inject
-    lateinit var repository: AuthRepository
+//    @Inject
+//    lateinit var auth: AppAuth
+//
+//    @Inject
+//    lateinit var repository: AuthRepository
 
     private val viewModel: RegistrationLoginViewModel by viewModels()
     private lateinit var navController: NavController
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,14 +46,14 @@ class RegistrationFragment : Fragment() {
     ): View? {
         val binding = FragmentRegistrationBinding.inflate(inflater, container, false)
 
-        navController = findNavController()
+       navController = findNavController()
 
         viewModel.isSignedIn.observe(viewLifecycleOwner) { isSignedId ->
             if (isSignedId) {
                 binding.progress.visibility = View.GONE
                 Utils.hideKeyboard(requireView())
                 findNavController().popBackStack()
-                viewModel.invalidateSignedInState()
+//                viewModel.invalidateSignedInState()
             }
 
         }
@@ -65,7 +66,7 @@ class RegistrationFragment : Fragment() {
                 Snackbar.make(binding.root, msg, Snackbar.LENGTH_SHORT)
                     .setAction(getString(R.string.ok), {})
                     .show()
-                viewModel.invalidateDataState()
+//                viewModel.invalidateDataState()
             }
         }
 
@@ -157,8 +158,8 @@ class RegistrationFragment : Fragment() {
 
     }
 
-    override fun onDestroyView() {
-        viewModel.changePhoto(null, null)
-        super.onDestroyView()
-    }
+//    override fun onDestroyView() {
+//        viewModel.changePhoto(null, null)
+//        super.onDestroyView()
+//    }
 }

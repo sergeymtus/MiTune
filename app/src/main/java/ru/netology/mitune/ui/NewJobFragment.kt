@@ -20,6 +20,7 @@ import ru.netology.mitune.viewmodel.UserProfileViewModel
 class NewJobFragment : Fragment() {
     private val viewModel: UserProfileViewModel by activityViewModels()
     private lateinit var navController : NavController
+   //val navController = findNavController()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +28,7 @@ class NewJobFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         val binding = FragmentNewJobBinding.inflate(inflater, container, false)
-        navController = findNavController()
+       navController = findNavController()
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             Snackbar.make(binding.root, R.string.skip_edit_question, Snackbar.LENGTH_SHORT)

@@ -25,6 +25,7 @@ import ru.netology.mitune.adapter.PagingLoadStateAdapter
 import ru.netology.mitune.adapter.PostAdapter
 import ru.netology.mitune.databinding.FeedPostsBinding
 import ru.netology.mitune.dto.Post
+import ru.netology.mitune.ui.EditEventFragment.Companion.EDITED_TEXT
 import ru.netology.mitune.util.IntArg
 import ru.netology.mitune.viewmodel.AuthViewModel
 import ru.netology.mitune.viewmodel.PostViewModel
@@ -34,7 +35,10 @@ import ru.netology.mitune.viewmodel.PostViewModel
 class FeedPostFragment : Fragment() {
     private val viewModel: PostViewModel by activityViewModels()
     private val authViewModel: AuthViewModel by activityViewModels()
-    private lateinit var navController: NavController
+  private lateinit var navController: NavController
+
+
+
 
     companion object {
         var Bundle.intArg: Int by IntArg
@@ -113,7 +117,7 @@ class FeedPostFragment : Fragment() {
                 viewModel.editPost(post)
                 val text = post.content
                 val bundle = Bundle()
-                bundle.putString("editedText", text)
+                bundle.putString(EDITED_TEXT, text)
                 findNavController().navigate(R.id.action_postFragment_to_editPostFragment, bundle)
             }
 

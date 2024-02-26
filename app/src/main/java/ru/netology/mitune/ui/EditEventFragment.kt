@@ -21,6 +21,8 @@ class EditEventFragment : Fragment() {
     companion object {
         var Bundle.edit: String? by StringArg
 
+        const val EDITED_TEXT = "editedText"
+
     }
 
     override fun onCreateView(
@@ -30,8 +32,9 @@ class EditEventFragment : Fragment() {
     ): View? {
         val binding = FragmentEditEventBinding.inflate(inflater, container,false)
 
-        arguments?.edit?.let(binding.edit::setText)
-        binding.edit.setText(arguments?.getString("editedText"))
+       // arguments?.edit?.let(binding.edit::setText)
+
+        binding.edit.setText(arguments?.getString(EDITED_TEXT))
 
 
         binding.ok.setOnClickListener {

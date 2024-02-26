@@ -13,7 +13,7 @@ data class JobEntity(
     val start: String,
     val finish: String?,
     val link: String?,
-    var ownedByMe : Boolean
+    val ownedByMe : Boolean
 ) {
     fun toDto() = Job(
         id,

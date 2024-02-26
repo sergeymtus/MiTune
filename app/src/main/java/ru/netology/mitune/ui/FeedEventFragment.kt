@@ -22,6 +22,7 @@ import ru.netology.mitune.adapter.OnEventInteractionListener
 import ru.netology.mitune.adapter.PagingLoadStateAdapter
 import ru.netology.mitune.databinding.FragmentFeedEventsBinding
 import ru.netology.mitune.dto.Event
+import ru.netology.mitune.ui.EditEventFragment.Companion.EDITED_TEXT
 import ru.netology.mitune.util.IntArg
 import ru.netology.mitune.viewmodel.AuthViewModel
 import ru.netology.mitune.viewmodel.EventViewModel
@@ -73,7 +74,7 @@ class FeedEventFragment : Fragment() {
                 viewModel.editEvent(event)
                 val text = event.content
                 val bundle = Bundle()
-                bundle.putString("editedText", text)
+                bundle.putString(EDITED_TEXT, text)
                 findNavController().navigate(R.id.action_feedEventFragment_to_editEventFragment, bundle)
             }
 

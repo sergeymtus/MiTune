@@ -34,11 +34,19 @@ class UserMapConverter {
 }
 
 class ListConverter {
+
+//    @TypeConverter
+//    fun fromListDto(list: List<Int>?): String = list?.joinToString().orEmpty()
+
     @TypeConverter
     fun fromListDto(list: List<Int>?): String? {
         if (list == null) return ""
         return list.toString()
     }
+
+
+//    @TypeConverter
+//    fun toListDto(data: String?): List<Int>? = data?.split(", ")?.map { it.toInt() }
 
     @TypeConverter
     fun toListDto(data: String?): List<Int>? {
@@ -48,7 +56,10 @@ class ListConverter {
             return substr?.split(", ")?.map { it.toInt() }
         }
     }
+
 }
+
+
 
 class CoordinatesConverter {
     @TypeConverter

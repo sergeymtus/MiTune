@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.PopupMenu
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.view.isVisible
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -131,7 +132,8 @@ class PostViewHolder(
                 }
             }
 
-            postMenu.visibility = if (post.ownedByMe) View.VISIBLE else View.INVISIBLE
+            postMenu.isVisible = post.ownedByMe
+            // postMenu.visibility = if (post.ownedByMe) View.VISIBLE else View.INVISIBLE
 
             postMenu.setOnClickListener {
                 PopupMenu(it.context, it).apply {

@@ -11,7 +11,7 @@ data class UserEntity(
     val login: String = "",
     val name: String = "",
     val avatar: String? = null,
-    var isChecked: Boolean = false,
+    val isChecked: Boolean = false,
 ) {
     fun toDto() = User(
         id, login, name, avatar, isChecked

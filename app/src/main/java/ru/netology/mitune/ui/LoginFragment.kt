@@ -22,11 +22,11 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
-    @Inject
-    lateinit var auth: AppAuth
-
-    @Inject
-    lateinit var repository: AuthRepository
+//    @Inject
+//    lateinit var auth: AppAuth
+//
+//    @Inject
+//    lateinit var repository: AuthRepository
 
     private val viewModel: RegistrationLoginViewModel by activityViewModels()
     private lateinit var navController: NavController
@@ -35,7 +35,8 @@ class LoginFragment : Fragment() {
         const val LOGIN_SUCCESSFUL: String = "LOGIN_SUCCESSFUL"
     }
 
-    private lateinit var savedStateHandle: SavedStateHandle
+   // private lateinit var savedStateHandle: SavedStateHandle
+   private var savedStateHandle = SavedStateHandle()
 
     override fun onCreateView(
         inflater: LayoutInflater,

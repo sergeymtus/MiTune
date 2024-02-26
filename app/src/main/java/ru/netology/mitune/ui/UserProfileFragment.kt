@@ -77,7 +77,8 @@ class UserProfileFragment : Fragment() {
         userProfileViewModel.jobData.observe(viewLifecycleOwner) {
             if (authViewModel.authenticated && arguments == null) {
                 it.forEach { job ->
-                    job.ownedByMe = true
+                    //job.ownedByMe = true
+                    job.copy(ownedByMe = true)
                 }
             }
 
