@@ -126,11 +126,12 @@ object DataConverter {
 //        return sdf.format(requireNotNull(date))
 
 
-
-        val newDate = "$x.$y.$z $h:$m"
-        val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm")
-        val date = formatter.parse(newDate)
-        val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss'Z'")
-        return sdf.format(requireNotNull(date))
+        val newDate = LocalDateTime.of(z, y, x, h, m, ).toString()
+        return newDate
+        //val newDate = "$x.$y.$z $h:$m"
+//        val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm")
+//        val date = formatter.parse(newDate)
+//        val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss'Z'")
+//        return sdf.format(requireNotNull(date))
     }
 }
